@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/accueil.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/tailwind.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/fonts/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'components/js/eel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/all.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/vue.global.js' %}"></script>
+    <!-- <script type="text/javascript" src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com"></script> -->
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/accueil.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/font-awesome.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.min.js' %}"></script>
+
+    <title>Accueil</title>
+</head>
+
+<body class="" style="background-image: url('{% static 'staticImg/backFoot2.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+background-size: cover;font-family: 'Poppins', sans-serif;">
+    <!-- Bannière   static-->
+    <div class="bannière" style="background-image: url('{% static 'staticImg/cLUBmONS.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+    background-size: 100% 14em ;overflow: hidden;">
+        <!-- <img src="{% static 'staticImg/cLUBmONS.jpg'%}" alt="" style="object-fit: fill;overflow: hidden;height: 14em;width: 100%;"> -->
+        <!-- <img class="bannière_logo3" style="width: 100%; height: 14em;z-index: 1;" src="{% static 'staticImg/mons1a.jpg' %}" alt="">-->
+        <!-- <img class="bannière_logo3" src="{% static 'staticImg/mons1a_004.jpg' %}" style="width: 100%; height: 14em;z-index: 1;" srcset="">
+        <img class="bannière_logo2" style="margin-left:.3em;padding: 1em;z-index: 2; max-width: 7.5em; height: 12em;position: absolute;" src="{% static 'staticImg/LOGO.jpg' %}" alt="">  -->
+    </div>
+
+    <div class="menu ">
+        <div class="Nav ">
+            <div class="barMenu shadow-md"><i class="fa fa-bars"></i> <span>Menu</span> </div>
+            <nav class="navMenu ">
+                <div class="barMenux"><i class="fas fa-x"></i> <span>Menu</span> </div>
+                <span class="navActualite dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button "  class="btn  dropdown-toggle btnActualite " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-circle-info"></i> Actualités</button> <!--<a href=" ">  </a> btn_accueil  btn_connect -->
+                    <div class="dropdown-menu spanActualite ">
+                        <a class="dropdown-item" href="{% url 'actualite' %}#lastStory">Dernières Actualités</a>
+                        <a class="dropdown-item" href="{% url 'actualite' %}#futurStory">Evènement à venir</a>
+                    </div>
+                </span>
+                <span class="navEvenement dropdown">
+                    <button type="button " class="btn  dropdown-toggle btnEvenement" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-calendar-days"></i> Evènements</button> <!--btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanEvenement " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'evenement' %}#MPVE">MPVE</a>
+                        <a class="dropdown-item" href="{% url 'evenement' %}#Footing">Footing</a>
+                        <a class="dropdown-item" href="{% url 'evenement' %}#Soirée Culturel">Soirée Culturel</a>
+                    </div>
+                </span>
+                <span class="navHistorique dropdown"> <!--dropdown-->
+                    <button class="btn  btnHistorique dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"  type="button " ><i class="fas fa-history"></i> Historique </button> <!--class=""  aria-haspopup="true" aria-expanded="false"   btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanHistorique "  aria-labelledby="dropdownMenuButton"><!-- <span class="dropdown-item" style="background-color: rgb(59, 40, 40);color:#fff;" href="">Accès sous connection</span> -->
+                <a class="dropdown-item" href="{% url 'historique' %}#Création">Création</a>
+                <a class="dropdown-item" href="{% url 'historique' %}#Statut">Statut</a>
+                <a class="dropdown-item" href="{% url 'historique' %}#Histoire">Histoire</a>
+        </div>
+        </span>
+        <span class="navLogin dropdown">
+                    <button class="btn dropdown-toggle btnLogin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class=" fa fa-user"></i> Log</button>
+                    <div class="dropdown-menu spanLogin" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item aInscri" href="{% url 'inscription' %}">S'Inscrire</a>
+                        <a class="dropdown-item" href="{% url 'connection' %}">Se Connecter</a>
+                    </div>
+                </span>
+        </nav>
+
+        <div class=" middle row p-0 m-0 ">
+            <!-- col-lg-8 col-md-8 col-sm-12 col-xs-12 -->
+            <section class="marqueeDescription col-lg-8 col-md-8 row-sm-12 col-xs-12 m-0 p-0 " style=" display:flex;flex-shrink: 1;">
+                <marquee class="m-0 p-0 " id="marqueeMultimedia" behavior="5" direction="" style="border: 3px solid rgb(0, 255, 162);background-image: url('{% static 'staticImg/header16.jpeg'%}') ;background-repeat: no-repeat;background-position: center left;
+                background-size: cover;background-color: black;">
+                    <div class=" w-100 m-0 p-2 " style="display: flex;flex-direction:row;gap:1px;">
+                        {% for i in imGs %} {% if i.image_choisie %}
+                        <img src="{% static 'staticImg/' %}{{ i.image_choisie }} " class=" img-fluid " style="display: flex; height: 23em;width: 25em;border: 2px solid #fff;justify-self: center;border-radius: .75em; " alt=" "> {% endif %} {% endfor %}
+                        {% for e in vids %} {% if e.video_choisie %}
+                        <video controls style="height: 23em;border: 2px solid rgb(255, 255, 255);width: 22.5em;border-radius: .35em; " preload="metadata">
+                                    <source src="{% static 'staticVid/' %}{{ e.video_choisie }} " type="video/mp4">
+                                </video> {% endif %} {% endfor %}
+                    </div>
+                </marquee>
+            </section>
+            <section class=" description col-lg-4 col-md-4 row-sm-12 col-xs-12 p-0 w-100 m-0 " style="background-image:url( '{% static 'staticImg/mons1b.jpg' %}');background-size: 100% 100% ;background-repeat: no-repeat;background-position: center;">
+                <!-- background: linear-gradient(152deg,rgb(43, 42, 42),rgb(60, 60, 60),#fff);-->
+                <div style="display:flex;flex-direction: column;justify-content: flex-end; ">
+                    <p style="font-size: 16px;margin-left: 1.25em;font-style: italic;height: 2em; ">
+                        </span>Infos</span><span style="margin: 1em; ">Evènements</span><span style="margin: 1em; ">Alerts</span></p>
+                    <div style="margin-bottom: 0em; width: 100%;margin-top: 0em;z-index: 5;margin-top: 1.8em;font-size: 16px;font-weight: 700;padding: .35em; ">
+                        <span class=" ">
+                                        {% for e in infos %}
+                                            <span style="display:block;margin-top: .25em;margin-left: .75em; "> <i style="color: rgb(255, 255, 198); "><i class=" fa fa-info-circle "></i>{{e.titre}} </i></span>
+                        <span style="display:block;margin-left: .75em; ">{{e.description}} </span> {% endfor %}
+                        </span>
+                    </div>
+                    <!-- <marquee behavior=" " scrollamount="6 " direction="left ">
+                        <!--scrolldelay="400 "-->
+                    <!--</marquee> -->
+                    <!-- <p style="width: 100%; margin-top:1.25em;display:flex;align-content:flex-end;border: 1px solid #fff;box-sizing: border-box;height: 10em;position: absolute;z-index: 2; ">
+                        <img src="../static/staticImg/mons1b.jpg " style="display:flex;justify-content: flex-end; width: 100%;height: min-content; padding: 0; " alt=" ">
+                    </p> -->
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+<footer class="w-100 " style="height: 13em;background-image:url('{% static 'staticImg/wave.svg' %}'),linear-gradient(155deg,white 50%, #ec4899 50%);
+background-size:cover, cover;
+background-repeat:no-repeat,no-repeat;
+background-position: top center, bottom right ; ">
+    <!--url('../static/staticImg/player.jpg')'),150px 185px, no-repeat,bottom right,    background-image: url( '../static_Img/backFoot311_resultat.jpg') background: ;; #8b5cf6-->
+    <div class="info_content ">
+        <div class="info_header ">
+            <!-- <p>Rue Saint-Claire Face Immeuble des Députés</p> -->
+            <span class="follow ">
+                <span class="followImage "><a class="followImage " href="{% url 'accueil' %} "> <img src="{% static 'staticImg/LOGO.jpg' %}" alt=" "> </span></a>
+            <span class="followLink ">
+                    <span class="followLinkI "><i  class=" fa-brands fa-facebook-f ffb "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-whatsapp fwp "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-x-twitter ftwt "></i></span>
+            <span class="followLinkI "><i class=" fa-solid fa-envelope fgm "></i></span>
+            <span class="followLinkI "><i class=" fa-brands fa-youtube fytb "></i></span></span>
+            </span>
+            </span>
+            <span class="info_footer ">
+                <span  class="copy ">Copyright &copy; 2025</span>
+            <span class="made " style="margin: 1em;word-spacing: .35em; ">KFTJ | GMT</span>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $('.barMenux').off('click').on('click', function() {
+        $('.barMenu').toggle(700);
+        $('.barMenux').hide(700);
+        $('.navMenu').hide(700);
+    });
+
+
+    $('.barMenu').off('click').on('click', function() {
+        $('.barMenu').hide(450);
+        $('.barMenux').show(550);
+        $('.navMenu').show(550).css('position', 'absolute').css('z-index', ' 9999').css('flex-direction', 'column').css('', '').css('', '').css('', '').css('', '');
+    });
+
+
+    const marquee = document.getElementById('marqueeMultimedia');
+    const videos = marquee.querySelectorAll('video');
+
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            // Vérifie si stop existe avant d'appeler
+            if (typeof marquee.stop === "function ") {
+                marquee.stop();
+            }
+            video.addEventListener('pause', () => {
+                marquee.start(); // reprend le défilement
+            });
+            video.addEventListener('ended', () => {
+                marquee.start(); // reprend le défilement
+            });
+        });
+    });
+</script>
+
+</html>

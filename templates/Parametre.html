@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/all.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" href="../css/parametre.css">
+    <link rel="stylesheet" type="text/css" href="../css/fontawesome.min.css">
+
+    <script type="text/javascript" src="../js/eel.js"></script>
+    <script type="text/javascript" src="../js/all.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/accueil.js"></script>
+    <script type="text/javascript" src="../js/font-awesome.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <title>Mon Compte</title>
+
+</head>
+
+<body>
+    <!-- Bannière -->
+    <div class="bannière">
+        <!-- <img class="bannière_logo1" src="../static/static_Img/backFoot7.jpg" alt=""> -->
+        <img class="bannière_logo2 " src="../static_Img/logo01.png" style="width: 100%;"  alt="">
+        <!-- <img class="bannière_logo3" src="../static_Img/LOGO.jpg" alt=""> -->
+    </div>
+
+    <div class="menu " style="background-color: rgb(210, 215, 221);margin-bottom: 2em;">
+        <div class="Nav "> 
+            <nav class="navMenu">
+                <div class="barMenu"><i class="fa fa-bars"></i> Menu</div>  
+                <span class="navActualite dropdown">
+                    <button type="button "  class="btn  dropdown-toggle btnActualite " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-circle-info"></i> Actualités</button> <!--<a href=" ">  </a> btn_accueil  btn_connect -->
+                    <div class="dropdown-menu spanActualite ">
+                        <a class="dropdown-item" href="">Dernières Actualités</a>
+                        <a class="dropdown-item" href="">Evènement à venir</a>
+                    </div>
+                </span>
+                <span class="navEvenement dropdown">
+                    <button type="button " class="btn  dropdown-toggle btnEvenement" id="dropdownMenuButton" data-toggle="dropdown"><i class="fa-solid fa-calendar-days"></i> Evènements</button> <!--btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanEvenement " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="">MPVE</a>
+                        <a class="dropdown-item" href="">Footing</a>
+                        <a class="dropdown-item" href="">Soirée Culturel</a>
+                    </div>
+                </span>
+                <span class="navHistorique dropdown"> <!---->
+                    <button class="btn  btnHistorique dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-history"></i> Historique </button> <!--class=""    btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanHistorique " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="">Création</a>
+                        <a class="dropdown-item" href="">Statut</a>
+                        <a class="dropdown-item" href="">Histoire</a>
+                    </div>
+                </span>
+                <span class="navLogin dropdown">
+                    <button class="btn dropdown-toggle btnLogin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Login</button>
+                    <div class="dropdown-menu spanLogin" aria-labelledby="dropdownMenuButton">
+                        <!-- <a class="dropdown-item aInscri" onclick="location.href='/inscription' ">S'Inscrire</a> -->
+                        <a class="dropdown-item" onclick="location.href='/connection'">Se Deconnecter</a>
+                    </div>
+                </span>
+            </nav>
+
+            <div class="menuBody">   
+                <div class="gridContentAA">
+                    <div>
+                        <!-- <p style="margin-top: 3.5em;font-weight:500;"><i>Paramètres de Connection</i></p>  -->
+                        <p class=" btn paraPersoTitleAA">Mot de passe</p>
+                        <div class="gridContentAAContent">
+                            <span class="modif modifMotPasse">Modifier</span>
+                            <form action="" method="get" class="form formMotPasse" style="display: none;">
+                                <input type="password" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(72,72,255);" class="form-control inptParametre" placeholder="Nouveau mot de passe">
+                                <button type="submit" class="btn btn-outline-primary" style="width: 8em;height:3em;border-radius: 4em;">Valider</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="gridContent">
+                    <!-- <p style="font-weight:500;"><i>Paramètres Personnels</i> </p> -->
+                    <div class="gridContentA">
+                        <div>
+                            <p class=" btn paraPersoTitleA">Nom Profil</p>
+                            <div class="gridContentAContent">
+                                <span>
+                                    <span class="modif modifProfil">Modifier</span>
+                                    <form action="" method="get" class="form-inline formModifProfil" style="margin-bottom: 1em;display: none;">
+                                        <input type="text" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(72,72,255);" class="form-control inptParametre" placeholder="Nom de Profil">
+                                        <button type="submit" class="btn btn-outline-primary" style="width: 8em;height:3em;border-radius: 4em;">Modifier</button>
+                                    </form>
+                                </span>
+                                <span>
+                                    <span style="cursor:pointer;" class="supp suppProfil">Supprimer</span>
+                                    <form action="" method="get" class="form-inline formSuppProfil" style="margin-bottom: 1em;display: none;">
+                                        <input type="text" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(255,72,72);" class="form-control inptParametre" placeholder="Nom de Profil">
+                                        <button type="submit" class="btn btn-outline-primary suppButton">Supprimer</button>
+                                    </form>
+                                </span> 
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="gridContentB">
+                        <div>
+                            <p style="cursor:pointer;" class=" btn paraPersoTitleB">Numéro de Téléphone</p>
+                            <div class="gridContentBContent">
+                                <span>
+                                    <span class="modif modifTel">Modifier</span>
+                                    <form action="" method="get" class="form-inline formModifTel" style="margin-bottom: 1em;display: none;">
+                                        <input type="tel" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(72,72,255);" class="form-control inptParametre" placeholder="237 |">
+                                        <button type="submit" class="btn btn-outline-primary" style="width: 8em;height:3em;border-radius: 4em;">Modifier</button>
+                                    </form>
+                                </span>
+                                <span>
+                                    <span style="cursor:pointer;" class="supp suppTel">Supprimer</span>
+                                    <form action="" method="get" class="form-inline formSuppTel" style="margin-bottom: 1em;display: none;">
+                                        <input type="TEL" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(255,72,72);" class="form-control inptParametre" placeholder="237 |">
+                                        <button type="submit" class="btn btn-outline-primary suppButton">Supprimer</button>
+                                    </form>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gridContentC">
+                        <div>
+                            <p style="cursor:pointer;" class=" btn paraPersoTitleC">Photo de Profil</p>
+                            <div class="gridContentCContent">
+                                <span>
+                                    <span class="modif modifPhoto">Modifier</span>
+                                    <form action="" method="get" class="form-inline formModifPhoto" style="margin-bottom: 1em;display: none;">
+                                        <input type="file" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(72,72,255);" class="form-control inptParametre" placeholder="Photo">
+                                        <button type="submit" class="btn btn-outline-primary" style="width: 8em;height:3em;border-radius: 4em;">Modifier</button>
+                                    </form>
+                                </span>
+                                <span>
+                                    <span style="cursor:pointer;" class="supp suppPhoto">Supprimer</span>
+                                    <form action="" method="get" class="form-inline formSuppPhoto" style="margin-bottom: 1em;display: none;">
+                                        <input type="file" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(255,72,72);" class="form-control inptParametre" placeholder="Photo">
+                                        <button type="submit" class="btn btn-outline-primary suppButton">Supprimer</button>
+                                    </form>
+                                </span>     
+                            </div>   
+                        </div>    
+                    </div>
+
+                    <div class="gridContentD">
+                        <div>
+                            <p style="cursor:pointer;" class=" btn paraPersoTitleD">Photo de Galérie</p>
+                            <div class="gridContentDContent">
+                                <span>
+                                    <span class="modif modifGalerie">Modifier</span>
+                                    <form action="" method="get" class="form-inline formModifGalerie" style="margin-bottom: 1em;display: none;">
+                                        <input type="file" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(72,72,255);" class="form-control inptParametre" placeholder="Photo">
+                                        <button type="submit" class="btn btn-outline-primary" style="width: 8em;height:3em;border-radius: 4em;">Modifier</button>
+                                    </form>
+                                </span>
+                                <span>
+                                    <span style="cursor:pointer;" class="supp suppGalerie">Supprimer</span>
+                                    <form action="" method="get" class="form-inline formSuppGalerie" style="margin-bottom: 1em;display: none;">
+                                        <input type="file" name="" id="" style="width: 15em;height:3em;margin-right: 1.5em;border:0px;border-bottom: 1px dotted rgb(255,72,72);" class="form-control inptParametre" placeholder="Photo">
+                                        <button type="submit" class="btn btn-outline-primary suppButton">Supprimer</button>
+                                    </form>
+                                </span> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer class="" style="background: linear-gradient(155deg,white 50%,rgb(59, 40, 40) 50%);font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"> <!--  background-image: url( '../static_Img/backFoot311_resultat.jpg') ; -->
+    <div class="info_content">
+        <div class="info_header ">
+            <!-- <p>Rue Saint-Claire Face Immeuble des Députés</p> -->
+            <span class="follow" >
+                <span class="followImage"><a class="followImage" onclick="location.href='/accueil'"> <img src="../static_Img/LOGO.jpg" alt=""> </span></a>
+                <span class="followLink" >
+                    <span class="followLinkI"><i  class=" fa-brands fa-facebook-f ffb "></i></span>
+                    <span class="followLinkI"><i  class=" fa-brands fa-whatsapp fwp "></i></span>
+                    <span class="followLinkI"><i  class=" fa-brands fa-x-twitter ftwt "></i></span>
+                    <span class="followLinkI"><i class=" fa-solid fa-envelope fgm "></i></span>
+                    <span class="followLinkI"><i class=" fa-brands fa-youtube fytb "></i></span></span>       
+                </span>
+            </span>
+            <span class="info_footer">
+                <span  class="copy ">Copyright &copy; 2025</span>
+                <span class="made " style="margin: 1em;word-spacing: .35em; ">KFTJ | GMT</span>
+            </span>
+        </div>
+    </div>
+</footer>
+
+
+</html>

@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/accueil.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/actualite.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'Components/css/tailwind.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/fonts/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'components/js/eel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/all.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/accueil.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/actualite.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/vue.global.js' %}"></script>
+    <!-- <script type="text/javascript" src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com"></script> -->
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script type="text/javascript" src="../static/components/js/font-awesome.min.js' %}"></script>
+    <script type="text/javascript" src="../static/components/js/bootstrap.min.js' %}"></script>
+
+    <title>Actualités</title>
+</head>
+
+<body style="background-image: url('{% static 'staticImg/backFoot2.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+background-size: cover;font-family: 'Poppins', sans-serif;">
+    <!-- Bannière   static-->
+    <div class="bannière " style="background-image: url('{% static 'staticImg/cLUBmONS.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+    background-size: 100% 14em ;overflow: hidden;position: relative;">
+        <!-- <img class="bannière_logo2" src="../static/staticImg/logo01.png" alt="" style="width: 100%;"> -->
+        <!-- <img class="bannière_logo3" style="width: 100%; height: 14em;z-index: 1;" src="{% static 'staticImg/mons1a.jpg' %}" alt="">
+        <img class="bannière_logo2" style="margin-left:.3em;padding: 1em;z-index: 1; max-width: 7.5em; height: 12em;transform: translateY(-100%);" src="{% static 'staticImg/LOGO.jpg' %}" alt=""> -->
+    </div>
+    <!-- <p style="fill:#2b0000; letter-spacing:0; word-spacing:0; font-family:Bernard MT Condensed; font-size:9; stroke-width:0"><span >VETERANS DE MONS</span></p> -->
+    <div class="menu m-0">
+        <div class="Nav w-100 m-0 ">
+            <div class="barMenu shadow-md"><i class="fa fa-bars"></i> <span>Menu</span> </div>
+            <nav class="navMenu m-0">
+                <div class="barMenux"><i class="fas fa-x"></i> <span>Menu</span> </div>
+                <span class="navActualite dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button "  class="btn  dropdown-toggle btnActualite " > <a href="{% url 'accueil' %}"> <i class="fa-solid fa-home"></i> Accueil </a></button> <!--<a href=" ">  </a> btn_accueil  btn_connect -->
+                </span>
+                <span class="navEvenement dropdown">
+                    <button type="button " class="btn  dropdown-toggle btnEvenement" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-calendar-days"></i> Evènements</button> <!--btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanEvenement " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'evenement' %}#MPVE">MPVE</a>
+                        <a class="dropdown-item" href="{% url 'evenement' %}#Footing">Footing</a>
+                        <a class="dropdown-item" href="{% url 'evenement' %}#Soirée Culturel">Soirée Culturel</a>
+                    </div>
+                </span>
+                <span class="navHistorique dropdown"> <!--dropdown-->
+                    <button class="btn  btnHistorique dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"  type="button " ><i class="fas fa-history"></i> Historique  </button> <!-- aria-haspopup="true" aria-expanded="false" style="color: gray;" <i class="fa fa-caret-down" style="color: gray;"></i>  btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanHistorique " " aria-labelledby="dropdownMenuButton">
+                        <!-- <span class="dropdown-item" style="background-color: rgb(59, 40, 40);color:#fff;" href="">Accès sous connection</span> -->
+                <a class="dropdown-item" href="{% url 'historique' %}#Création">Création</a>
+                <a class="dropdown-item" href="{% url 'historique' %}#Statut">Statut</a>
+                <a class="dropdown-item" href="{% url 'historique' %}#Histoire">Histoire</a>
+        </div>
+        </span>
+        <span class="navLogin dropdown">
+                    <button class="btn dropdown-toggle btnLogin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class=" fa fa-user"></i> Log</button>
+                    <div class="dropdown-menu spanLogin" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item aInscri" href="{% url 'inscription' %}" >S'Inscrire</a>
+                        <a class="dropdown-item" href="{% url 'connection' %}">Se Connecter</a>
+                    </div>
+                </span>
+        </nav>
+
+        <div class="content w-100 m-0 p-0">
+            <div class="m-0 p-0">
+                <h1 id="lastStory " class="lastStory">
+                    <span class="lastStoryHeader btn" style="text-align: center;height: 2.5em;color: #fff;"> Dernières Actualités <i class="fa fa-caret-down" ></i></span>
+                </h1>
+                <div class="lastStoryMenu  m-0 p-0" style="display: block; border:1px solid #f7e605dd;">
+                    <h4 class="w-100" style="display: block; ">
+                        <p class="video" style="padding:1em;"> <i class="fa-solid fa-video" style="margin-right: .4em;"> </i> <span>En Vidéos</span> </p>
+                        <div class="table-responsive" style="background-image: url('{% static 'staticImg/header19.jpeg'%}') ;background-repeat: no-repeat;background-position: center left;
+                                background-size: cover;background-color: #4B0082; display: flex;flex-direction: row;justify-content:space-evenly; overflow-y: hidden;">
+                            <p class="videoContent " style=" display: flex;flex-direction: row;">
+                                {% for e in page_obj %} {% if e.video_choisie %}
+                                <span style="border: 1px solid #fff;width: 22.5em;height: 15.1em;border-radius: .75em;">
+                                        <video style="display:flex;justify-content: center;width: 22.5em;height: 15em;border: 1px solid #fbfbfb;border-radius: .75em;" controls preload="metadata">
+                                                    <source src="{% static 'staticVid/' %}{{ e.video_choisie }}" type="video/mp4" >
+                                                </video>
+                                        </span> {% endif %} {% endfor %}
+                            </p>
+                        </div>
+                        <div id="viddeo" class="pagination" style=" display:block;text-align: center;padding: 1em;font-size: 15px; ">
+                            <span class="step-links "> {% if page_obj.has_previous %}
+                                            <a href="?page=1#viddeo " >&laquo; première</a>
+                                            <a href="?page={{page_obj.previous_page_number}}#viddeo " >précédent</a>
+                                        </span>{% endif %}
+                            <span class="current " style="margin-left: .5em; ">Page {{page_obj.number}} sur {{ page_obj.paginator.num_pages}} </span> {% if page_obj.has_next %}
+                            <a href="?page={{page_obj.next_page_number}}#viddeo ">suivant</a>
+                            <a href="?page={{page_obj.paginator.num_pages}}#viddeo ">dernière &raquo;</a>{% endif %}
+                            </span>
+                        </div>
+                    </h4>
+                    <h4 class="w-100 " style="display: block; ">
+                        <p class="image " style="padding:1em; "> <i class="fa-solid fa-image "> </i> <span>En Images</span></p>
+                        <div class="table-responsive" style="background-image: url('{% static 'staticImg/header17.jpeg'%}') ;background-repeat: no-repeat;background-position: center left;
+                                background-size: cover; background-color: rgb(27, 97, 0);display: flex;flex-direction: row;justify-content: space-evenly;overflow-y: hidden; ">
+                            <!--flex-wrap: wrap; border: 1px solid rgb(3, 58, 255); -->
+                            <p class="imageContent " style="display: flex;flex-direction: row;justify-content: center; flex-grow: 1;flex-basis:200;text-align:center; ">
+                                {% for i in page_objImg %} {% if i.image_choisie %}
+                                <span style="border: 1px solid #fbfbfb;width: 15em;height: 13.1em;border-radius: .75em; ">
+                                        <img style="width: 15em;height: 13em;border: 1px solid #fbfbfb;border-radius: .75em; " src="{% static 'staticImg/' %}{{ i.image_choisie }} " class=" img-fluid " alt=" ">
+                                    </span> {% endif %}{% endfor %}
+
+                            </p>
+                        </div>
+                        <div id="img" class="pagination " style="display:block;text-align: center;padding: 1em;font-size: 15px; ">
+                            <span class="step-links "> {% if page_objImg.has_previous %}
+                                            <a href="?pageimGs=1#img " >&laquo; première</a>
+                                            <a href="?page={{page_objImg.previous_page_number}}#img " >précédent</a>
+                                        </span>{% endif %}
+                            <span class="current " style="margin-left: .5em; ">Page {{page_objImg.number}} sur {{ page_objImg.paginator.num_pages}} </span> {% if page_objImg.has_next %}
+                            <a href="?pageimGs={{page_objImg.next_page_number}}#img ">suivant</a>
+                            <a href="?pageimGs={{page_objImg.paginator.num_pages}}#img ">dernière &raquo;</a>{% endif %}
+                            </span>
+                        </div>
+                    </h4>
+                    <h4 class="w-100 ">
+                        <span class="navLogin dropdown" style="padding:1em;margin-right: .4em;">
+                                    <button style="color: #fff;" class="btn dropdown-toggle btnLogin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class=" fa-solid fa-file"></i> Documentation</button>
+                                    <div class="dropdown-menu spanLogin" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item ">Rapports de Réunion | Se conecter..</a>
+                                    </div>
+                                </span>
+                    </h4>
+                </div>
+            </div>
+            {% comment %} style="text-align:center; " {% endcomment %}
+            <div class="w-100 m-0 p-0 ">
+                <h1 id="futurStory" class="futurStory btn " style="text-align: center;height: 3em;color: #fff; ">Evènements à venir</h1>
+                <div class="futurStoryMenu w-100 m-0" style=" opacity: 1;  background-image:url( '../static/staticImg/header6.jpg');background-size: 100% 100%;background-repeat: no-repeat;background-position: center; ">
+                    <div class=" m-0" style="font-size: 17px;border-radius: .35em;backdrop-filter: blur(1px);padding: .3em;">
+                        <!--background-color: #383737;-->
+                        <div>{% for e in infos %}
+                            <p style="display:block;font-weight: 700;">
+                                <i style="color: #fff700 "><i class=" fa fa-info-circle "></i> {{e.titre}} </i>
+                            </p>
+                            <p style="display:block;color: #ffffff;font-weight: 700;">{{e.description}} </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+<footer class="m-0 " style="height: 13em;background-image:url('{% static 'staticImg/wave.svg' %}'),linear-gradient(155deg,white 50%, #ec4899 50%);
+background-size:cover, cover;
+background-repeat:no-repeat,no-repeat;
+background-position: top center, bottom right ; ">
+    <!--  background-image: url( '../static_Img/backFoot311_resultat.jpg') ; -->
+    <div class="info_content ">
+        <div class="info_header ">
+            <!-- <p>Rue Saint-Claire Face Immeuble des Députés</p> -->
+            <span class="follow ">
+                <span class="followImage "><a class="followImage " href="{% url 'accueil' %} " > <img src="{% static 'staticImg/LOGO.jpg' %}" alt=" "> </span></a>
+            <span class="followLink ">
+                    <span class="followLinkI "><i  class=" fa-brands fa-facebook-f ffb "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-whatsapp fwp "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-x-twitter ftwt "></i></span>
+            <span class="followLinkI "><i class=" fa-solid fa-envelope fgm "></i></span>
+            <span class="followLinkI "><i class=" fa-brands fa-youtube fytb "></i></span></span>
+            </span>
+            </span>
+            <span class="info_footer ">
+                <span  class="copy ">Copyright &copy; 2025</span>
+            <span class="made " style="margin: 1em;word-spacing: .35em; ">KFTJ | GMT</span>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<!--style="background-image: url( '../static/staticImg/wave2.svg') ;background-repeat: no-repeat;background-position: center center; background-size: cover; "    background-image: url('../static/staticImg/wave2.svg') <img src="../static/staticImg/wave2.svg ">
+style=" background: linear-gradient(155deg,white 50%,rgb(59, 40, 40) 50%);font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif "
+-->
+
+<script>
+    $('.barMenux').off('click').on('click', function() {
+        $('.barMenu').toggle(700);
+        $('.barMenux').hide(700);
+        $('.navMenu').hide(700);
+    });
+
+
+    $('.barMenu').off('click').on('click', function() {
+        $('.barMenu').hide(450);
+        $('.barMenux').show(550);
+        $('.navMenu').show(550).css('position', 'absolute').css('z-index', ' 9999').css('flex-direction', 'column').css('', '').css('', '').css('', '').css('', '');
+    });
+
+
+
+    ///Vuejs
+    const {
+        createApp
+    } = Vue;
+    createAp({
+        name: 'users',
+        data() {
+            return {
+                users: []
+            }
+        },
+        mounted() {
+            fetch('/actualite', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    this.users = data
+                })
+                .catch(err => console.error(err))
+        }
+    }).mount('#app');
+</script>
+
+</html>

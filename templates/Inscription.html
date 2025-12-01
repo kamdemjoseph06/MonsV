@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/accueil.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/tailwind.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/fonts/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'components/js/eel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/all.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/vue.global.js' %}"></script>
+    <!-- <script type="text/javascript" src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com"></script> -->
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/accueil.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/font-awesome.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.min.js' %}"></script>
+
+    <title>Inscription</title>
+</head>
+
+<body style="background-image: url('{% static 'staticImg/backFoot2.jpg' %}') ;background-repeat: no-repeat;background-position: center center;
+ background-size: cover;overflow-x: hidden;font-family: 'Poppins', sans-serif;">
+    <div>
+        <!-- Bannière -->
+        <div class="bannière" style="background-image: url('{% static 'staticImg/cLUBmONS.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+    background-size: 100% 14em ;overflow: hidden;position: relative;">
+            <!-- style="overflow: hidden;position: relative;" <img class="bannière_logo2" style="margin-left:.3em;padding: 1em;z-index: 2; max-width: 7.5em; height: 12em;;position: absolute;" src="{% static 'staticImg/LOGO.jpg' %}" alt="">
+            <img class="bannière_logo3" style="width: 100%; height: 14em;z-index: 1;position: relative;" src="{% static 'staticImg/mons1a.jpg' %}" alt="">
+            <span></span> -->
+        </div>
+
+        <!--  Aller se Connecter ou s inscrire -->
+        <span class="w-100" style="display: flex;justify-content:flex-end;">
+            <button type="button" class="btn btn-oultine btnActualite" style="border-radius: 5em;height: 2.7em; background-color: rgb(72, 72, 255);color: #fff;margin-top: 2em;margin-right: 1.2em;"><a href="{% url 'connection' %}">Se Connecter</a> </button>
+        </span>
+
+        <p id="message">
+            {% if msg %}
+            <!-- <div style="float:right;display:block;">x</div> -->
+            <div style=" display:flex;justify-content:center;align-content:center;color: rgb(255, 77, 0);">{{ msg }}</div>
+            {% endif %}
+        </p>
+
+        <!-- Formulaire de Souscription -->
+        <div class="form-souscri " style="text-align: center;display: flex;justify-content: center;">
+            <form action="" method="POST" class="formSouscri">
+                {% csrf_token %}
+                <input style="background-color: transparent;" type="text" name="Noms" id="nomInscri" class="form-control inpt_souscri nomsInscri" placeholder=" Noms " required>
+                <input style="background-color: transparent;" type="text" name="Prenom" id="" class="form-control  inpt_souscri prenomInscri" placeholder="Prénoms" required>
+                <input style="background-color: transparent;" type="text" name="dateBirth" id="" class="form-control  inpt_souscri dateInscri" placeholder="Date de naissance" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                <input style="background-color: transparent;" type="password" name="Code" id="" class="form-control  inpt_souscri codeInscri" placeholder="Code Vétéran" required>
+                <input style="background-color: transparent;" type="password" name="MotPasse" id="" class="form-control inpt_souscri MotPasseInscri " placeholder="Mot de passe" required>
+                <button type="submit" class="btn btn_souscri">Inscription</button>
+                <!--<a href="" class="a a_souscri" style="text-decoration: none;color:#fff;">-->
+                <p class="forgot ">Mot de passe oublié ?</p>
+            </form>
+        </div>
+
+        <div class="container alert_forgot w-75" style=" display:none;border-radius: .5em;">
+            <div class="cls_forgot">x</div>
+            <div class="content_forgot p-4" style="align-content:center;">
+                <p>Si vous avez oublié votre mot de passe vous pouvez utiliser votre Code Vétéran.</p>
+                <p>En cas de perte de votre Code Vétéran, veuillez contacter votre Administrateur.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer class="d-block mt-5" style="height: 13em;background-image:url('{% static 'staticImg/wave.svg' %}'),linear-gradient(155deg,white 50%, #ec4899 50%);
+background-size:cover, cover;
+background-repeat:no-repeat,no-repeat;
+background-position: top center, bottom right ; " ">
+    <!--  background-image: url( '../static_Img/backFoot311_resultat.jpg') ; -->
+    <div class="info_content ">
+        <div class="info_header ">
+            <!-- <p>Rue Saint-Claire Face Immeuble des Députés</p> -->
+            <span class="follow ">
+                <span class="followImage "><a class="followImage " href="{% url 'accueil' %} "> <img src="{% static 'staticImg/LOGO.jpg' %} " alt=" "> </span></a>
+            <span class="followLink ">
+                    <span class="followLinkI "><i  class=" fa-brands fa-facebook-f ffb "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-whatsapp fwp "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-x-twitter ftwt "></i></span>
+            <span class="followLinkI "><i class=" fa-solid fa-envelope fgm "></i></span>
+            <span class="followLinkI "><i class=" fa-brands fa-youtube fytb "></i></span></span>
+            </span>
+            </span>
+            <span class="info_footer ">
+                <span  class="copy ">Copyright &copy; 2025</span>
+            <span class="made " style="margin: 1em;word-spacing: .35em; ">KFTJ | GMT</span>
+            </span>
+        </div>
+    </div>
+</footer>
+
+
+</html>

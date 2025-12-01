@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/accueil.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/css/tailwind.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'components/fonts/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'components/js/eel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/all.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/vue.global.js' %}"></script>
+    <!-- <script type="text/javascript" src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com"></script> -->
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/accueil.js' %} "></script>
+    <script type="text/javascript" src="{% static 'components/js/historique.js' %} "></script>
+    <script type="text/javascript" src="{% static 'components/js/font-awesome.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'components/js/bootstrap.min.js' %}"></script>
+
+    <title>Historique</title>
+
+</head>
+
+<body style="background-image: url('{% static 'staticImg/backFoot2.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+background-size: cover;margin: 0;padding:0;overflow-x:hidden;font-family: 'Poppins', sans-serif;">
+
+    <!-- Bannière -->
+    <div class="bannière" style="background-image: url('{% static 'staticImg/cLUBmONS.jpg'%}') ;background-repeat: no-repeat;background-position: center center;
+    background-size: 100% 14em ;overflow: hidden;position: relative;">
+        <!-- <img class="bannière_logo3" style="width: 100%; height: 14em;z-index: 1;" src="{% static 'staticImg/mons1a.jpg' %}" alt="">
+        <img class="bannière_logo2" style="margin-left:.3em;padding: 1em;z-index: 2; max-width: 7.5em; height: 12em;position: absolute;" src="{% static 'staticImg/LOGO.jpg' %}" alt=""> -->
+        <!--;transform: translateY(-100%)-->
+        <!-- <span><img src="../static/staticImg/image.png" alt="" style="z-index: 2;max-width: 20em; height: 3em;position: absolute;transform: translate(300%, 350%);"> </span> -->
+    </div>
+
+    <div class="menu">
+        <div class="Nav w-100" style="margin: 0;">
+            <div class="barMenu shadow-md" style="max-height: min-content;border: 1px solid black;"><i class="fa fa-bars"></i> <span>Menu</span> </div>
+            <nav class="navMenu" style="margin: 0;">
+                <div class="barMenux"><i class="fas fa-x"></i> <span>Menu</span> </div>
+                <span class="navActualite dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button "  class="btn  dropdown-toggle btnActualite " > <a href="{% url 'accueil' %}"> <i class="fa-solid fa-home"></i> Accueil </a></button> <!--<a href=" ">  </a> btn_accueil  btn_connect -->
+                </span>
+                <span class="navActualite dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button "  class="btn  dropdown-toggle btnActualite " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-circle-info"></i> Actualités</button> <!--<a href=" ">  </a> btn_accueil  btn_connect -->
+                   <div class="dropdown-menu spanActualite ">
+                        <a class="dropdown-item" href="{% url 'actualite' %}#lastStory">Dernières Actualités</a>
+                        <a class="dropdown-item" href="{% url 'actualite' %}#futurStory">Evènement à venir</a>
+                    </div>
+                </span>
+                <span class="navEvenement dropdown">
+                    <button type="button " class="btn  dropdown-toggle btnEvenement" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-calendar-days"></i> Evènements</button> <!--btn_accueil btn_connect -->
+                    <div class="dropdown-menu spanEvenement " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'evenement' %}#MPVE">MPVE</a>
+                        <a class="dropdown-item" href="{% url 'evenement' %}#Footing">Footing</a>
+                        <a class="dropdown-item" href="{% url 'evenement' %}#Soirée Culturel">Soirée Culturel</a>
+                    </div>
+                </span>
+                <span class="navLogin dropdown">
+                    <button class="btn dropdown-toggle btnLogin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class=" fa fa-user"></i> Log</button>
+                    <div class="dropdown-menu spanLogin" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item aInscri" href="{% url 'inscription' %}" >S'Inscrire</a>
+                        <a class="dropdown-item" href="{% url 'connection' %}">Se Connecter</a>
+                    </div>
+                </span>
+            </nav>
+
+            <div style="margin-left: .5em;" class="navLogin dropdown">
+                <button style="height: 3.25em;border-radius: 1em;border-color: rgb(59, 40, 40);color:rgb(56, 56, 56);" class="btn btn-outline-light usersHistory mt-1  btnhist" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> Liste des membres <i class="fa fa-caret-down" aria-hidden="true"></i> </button>
+                <div class="dropdown-menu spanLogin" aria-labelledby="dropdownMenuButton">
+                    {% for i in uzer %}
+                    <a style="cursor: pointer;color: #fff ; " class="dropdown-item ">{{ i.noms }} {{ i.prenoms }}</a> {% endfor %}
+                </div>
+            </div>
+
+            <div style="margin-left: .5em;" class="navDoc">
+                <button style="height: 3.25em;border-radius: 1em;border-color: rgb(59, 40, 40);color:rgb(56, 56, 56);" class="btn btn-outline-light usersHistory mt-1 btnhist"><i class="fa fa-file-archive" aria-hidden="true"></i> Rapports d'Activités <i class="fa fa-caret-down" aria-hidden="true"></i> </button>
+            </div>
+
+            <div class="spandocuments p-2 mb-2 mt-2" style=" display:block;width: 100%;background-color: rgb(59, 40, 40);">
+                <table class="table table-responsive table-dark table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Dates</th>
+                            <th></th>
+                            <th>Titre</th>
+                            <th>Documents</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in documents %}
+                        <tr>
+                            <td style="cursor: pointer;">{{ i.datePub|date:"d/m/y" }}
+                                <td>
+                                    <td style="cursor: pointer;">{{ i.titre }}</td>
+                                    <td style="cursor: pointer;color: #fff;"><a style="color: #fff;" href="{% static 'staticDoc/' %}{{ i.doc_choisie }}" download="{% static 'staticDoc/' %}{{ i.doc_choisie }}">{{ i.doc_choisie }}</a> </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-xs-12 row-sm-12 w-100 mr-0 " style=" display: flex;flex-direction:column;overflow-x: hidden;scroll-snap-type: y mandatory; ">
+                <div class="row row-lg-12 row-md-12 row-xs-12 row-sm-12 " style="overflow: auto; scroll-snap-align: start;height: 100vh; ">
+                    <h1 id="Création" style=" font-size: 19px;font-weight: 700;margin: 1.5em; "># Création</h1>
+                </div>
+                <div class="row row-lg-12 row-md-12 row-xs-12 row-sm-12 " style="overflow: auto; border: 1px solid black;scroll-snap-align: start;height: 100vh; ">
+                    <h1 id="Statut" style="font-size: 19px;font-weight: 700;margin: 1.5em; "># Statut</h1>
+                </div>
+                <div class="row row-lg-12 row-md-12 row-xs-12 row-sm-12 " style="overflow: auto; scroll-snap-align: start;height: 100vh; ">
+                    <h1 id="Histoire" style="font-size: 19px;font-weight: 700;margin: 1.5em; "># Histoire</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<footer class=" " style="height: 13em;background-image:url('{% static 'staticImg/wave.svg' %}'),linear-gradient(152deg,white 50%, #ec4899 50%);
+background-size:cover, cover;
+background-repeat:no-repeat,no-repeat;
+background-position: top center, bottom right ; ">
+    <!--  background-image: url( '../static_Img/backFoot311_resultat.jpg') ; -->
+    <div class="info_content ">
+        <div class="info_header ">
+            <!-- <p>Rue Saint-Claire Face Immeuble des Députés</p> -->
+            <span class="follow ">
+                <span class="followImage "><a class="followImage " href="{% url 'accueil' %}"> <img src="{% static 'staticImg/LOGO.jpg' %} " alt=" "> </span></a>
+            <span class="followLink ">
+                    <span class="followLinkI "><i  class=" fa-brands fa-facebook-f ffb "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-whatsapp fwp "></i></span>
+            <span class="followLinkI "><i  class=" fa-brands fa-x-twitter ftwt "></i></span>
+            <span class="followLinkI "><i class=" fa-solid fa-envelope fgm "></i></span>
+            <span class="followLinkI "><i class=" fa-brands fa-youtube fytb "></i></span></span>
+            </span>
+            </span>
+            <span class="info_footer ">
+                <span  class="copy ">Copyright &copy; 2025</span>
+            <span class="made " style="margin: 1em;word-spacing: .35em; ">KFTJ | GMT</span>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $('.barMenux').off('click').on('click', function() {
+        $('.barMenu').toggle(700);
+        $('.barMenux').hide(700);
+        $('.navMenu').hide(700);
+    });
+
+
+    $('.barMenu').off('click').on('click', function() {
+        $('.barMenu').hide(450);
+        $('.barMenux').show(550);
+        $('.navMenu').show(550).css('position', 'absolute').css('z-index', ' 9999').css('flex-direction', 'column').css('', '').css('', '').css('', '').css('', '');
+    });
+</script>
+
+</html>
