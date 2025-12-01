@@ -1,0 +1,20 @@
+.inpt_souscri{
+    color: rgb(59, 40, 40);
+    background-color: transparent;
+}
+
+.inpt_souscri::placeholder{
+    color: rgb(59, 40, 40);
+    opacity: 1;
+}
+
+.inpt_connection{
+    color: rgb(59, 40, 40);
+    background-color: transparent;
+}
+
+.inpt_connection::placeholder{
+    color: rgb(59, 40, 40);
+    opacity: 1;
+}
+
