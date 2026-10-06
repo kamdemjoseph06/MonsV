@@ -1,0 +1,39 @@
+{% load static %}
+<header class="site-header">
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <div class="site-banner" role="img" aria-label="Bannière du Club Mons" style="background-image: url('{% static 'staticImg/cLUBmONS.jpg' %}')"></div>
+    <nav class="site-nav" aria-label="Navigation principale">
+        <a class="site-nav-home" href="{% url 'accueil' %}"><i class="fa fa-home" aria-hidden="true"></i><span>Accueil</span></a>
+        <details class="site-nav-group">
+            <summary><i class="fa fa-info-circle" aria-hidden="true"></i> Actualités</summary>
+            <div class="site-nav-dropdown">
+                <a href="{% url 'actualite' %}#lastStory">Dernières actualités</a>
+                <a href="{% url 'actualite' %}#futurStory">Infos et événements à venir</a>
+            </div>
+        </details>
+        <details class="site-nav-group">
+            <summary><i class="fa fa-calendar" aria-hidden="true"></i> Événements</summary>
+            <div class="site-nav-dropdown">
+                <a href="{% url 'evenement' %}#mpve">MPVE</a>
+                <a href="{% url 'evenement' %}#footing">Footing</a>
+                <a href="{% url 'evenement' %}#soiree-culturelle">Soirée culturelle</a>
+            </div>
+        </details>
+        <details class="site-nav-group">
+            <summary><i class="fa fa-history" aria-hidden="true"></i> Historique</summary>
+            <div class="site-nav-dropdown">
+                <a href="{% url 'historique' %}#creation">Création</a>
+                <a href="{% url 'historique' %}#statut">Statut</a>
+                <a href="{% url 'historique' %}#histoire">Histoire</a>
+                <a href="{% url 'historique' %}#rapports">Rapports d’activités</a>
+            </div>
+        </details>
+        <details class="site-nav-group site-nav-account">
+            <summary><i class="fa fa-user" aria-hidden="true"></i> Espace membre</summary>
+            <div class="site-nav-dropdown">
+                <a href="{% url 'inscription' %}">S’inscrire</a>
+                <a href="{% url 'connection' %}">Se connecter</a>
+            </div>
+        </details>
+    </nav>
+</header>

@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#3b2828">
+    <title>{% block title %}Club Mons{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'components/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'components/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'components/css/accueil.css' %}">
+    <link rel="stylesheet" href="{% static 'components/css/site.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% include 'partials/site_header.html' %}
+    <main id="main-content" class="site-main">
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'partials/site_footer.html' %}
+    <script src="{% static 'components/js/site.js' %}" defer></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
