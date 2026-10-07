@@ -1,0 +1,21 @@
+{% if page.paginator.count %}
+<nav class="pagination" aria-label="{{ label }}">
+    <div class="pagination-controls">
+        {% if page.has_previous %}
+            <a href="?{{ param }}=1#{{ target }}" aria-label="Première page">Première</a>
+            <a href="?{{ param }}={{ page.previous_page_number }}#{{ target }}" aria-label="Page précédente">Précédente</a>
+        {% else %}
+            <span class="pagination-disabled" aria-disabled="true">Première</span>
+            <span class="pagination-disabled" aria-disabled="true">Précédente</span>
+        {% endif %}
+        {% if page.has_next %}
+            <a href="?{{ param }}={{ page.next_page_number }}#{{ target }}" aria-label="Page suivante">Suivante</a>
+            <a href="?{{ param }}={{ page.paginator.num_pages }}#{{ target }}" aria-label="Dernière page">Dernière</a>
+        {% else %}
+            <span class="pagination-disabled" aria-disabled="true">Suivante</span>
+            <span class="pagination-disabled" aria-disabled="true">Dernière</span>
+        {% endif %}
+    </div>
+    <span class="pagination-status" aria-current="page">Page {{ page.number }} sur {{ page.paginator.num_pages }}</span>
+</nav>
+{% endif %}
