@@ -25,13 +25,7 @@
                 <p class="empty-state">Aucune vidéo récente n’est disponible pour le moment.</p>
             {% endfor %}
         </div>
-        {% if page_obj.paginator.num_pages > 1 %}
-        <nav class="pagination" aria-label="Pages de vidéos">
-            {% if page_obj.has_previous %}<a href="?page=1#videos">Première</a><a href="?page={{ page_obj.previous_page_number }}#videos">Précédente</a>{% endif %}
-            <span>Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}</span>
-            {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}#videos">Suivante</a><a href="?page={{ page_obj.paginator.num_pages }}#videos">Dernière</a>{% endif %}
-        </nav>
-        {% endif %}
+        {% include 'partials/pagination.html' with page=page_obj param='page' target='videos' label='Pagination des vidéos' %}
     </section>
 
     <section class="content-panel news-card" id="images" aria-labelledby="images-title">
@@ -48,13 +42,7 @@
                 <p class="empty-state">Aucune photo récente n’est disponible pour le moment.</p>
             {% endfor %}
         </div>
-        {% if page_objImg.paginator.num_pages > 1 %}
-        <nav class="pagination" aria-label="Pages de photos">
-            {% if page_objImg.has_previous %}<a href="?pageimGs=1#images">Première</a><a href="?pageimGs={{ page_objImg.previous_page_number }}#images">Précédente</a>{% endif %}
-            <span>Page {{ page_objImg.number }} sur {{ page_objImg.paginator.num_pages }}</span>
-            {% if page_objImg.has_next %}<a href="?pageimGs={{ page_objImg.next_page_number }}#images">Suivante</a><a href="?pageimGs={{ page_objImg.paginator.num_pages }}#images">Dernière</a>{% endif %}
-        </nav>
-        {% endif %}
+        {% include 'partials/pagination.html' with page=page_objImg param='pageimGs' target='images' label='Pagination des photos' %}
     </section>
 </div>
 

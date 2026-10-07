@@ -13,6 +13,7 @@ class PublicPagesTests(TestCase):
                 response = self.client.get(reverse(route))
                 self.assertEqual(response.status_code, 200)
                 self.assertContains(response, "Navigation principale")
+                self.assertContains(response, "data-nav-toggle")
                 self.assertContains(response, "KFTJ")
                 self.assertContains(response, "site.css")
 
@@ -40,6 +41,37 @@ class PublicPagesTests(TestCase):
         self.assertContains(response, "/static/staticImg/IMG-14-09-2025-WA0000.jpg")
         self.assertContains(response, "/static/staticVid/static_Vid.mp4")
         self.assertNotContains(response, "data-carousel-next disabled")
+
+    def test_news_pagination_is_visible_and_paginates_photos_and_videos(self):
+        now = timezone.now()
+        img.objects.create(titre="Actualité", image_choisie="LOGO.jpg", datePub=now)
+        single_page = self.client.get(reverse("actualite"))
+        self.assertContains(single_page, "Page 1 sur 1")
+
+        for index in range(6):
+            img.objects.create(titre=f"Photo {index}", image_choisie="LOGO.jpg", datePub=now)
+        for index in range(5):
+            Vid.objects.create(titre=f"Vidéo {index}", video_choisie="static_Vid.mp4", datePub=now)
+
+        response = self.client.get(reverse("actualite"), {"pageimGs": "2", "page": "2"})
+        self.assertContains(response, "Page 2 sur 2", count=2)
+        self.assertContains(response, "pageimGs=1#images")
+        self.assertContains(response, "page=1#videos")
+
+    def test_event_pagination_is_restored_for_each_media_type(self):
+        now = timezone.now()
+        for index in range(4):
+            img.objects.create(titre="MPVE", image_choisie="LOGO.jpg", datePub=now)
+        for index in range(3):
+            Vid.objects.create(titre="MPVE", video_choisie="static_Vid.mp4", datePub=now)
+
+        response = self.client.get(reverse("evenement"), {
+            "pageimgsMPVE": "2",
+            "pagevidsMPVE": "2",
+        })
+        self.assertContains(response, "Page 2 sur 2", count=2)
+        self.assertContains(response, "pageimgsMPVE=1#mpve-images")
+        self.assertContains(response, "pagevidsMPVE=1#mpve-videos")
 
     def test_empty_news_and_gallery_pages_are_safe(self):
         news = self.client.get(reverse("actualite"))

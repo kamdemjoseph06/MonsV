@@ -28,13 +28,7 @@
                 <p class="empty-state">Les photos de cette activité seront affichées ici lorsqu’elles auront été publiées.</p>
             {% endfor %}
         </div>
-        {% if gallery.image_page.paginator.num_pages > 1 %}
-        <nav class="pagination" aria-label="Pages de photos – {{ gallery.title }}">
-            {% if gallery.image_page.has_previous %}<a href="?{{ gallery.image_param }}=1#{{ gallery.slug }}-images">Première</a><a href="?{{ gallery.image_param }}={{ gallery.image_page.previous_page_number }}#{{ gallery.slug }}-images">Précédente</a>{% endif %}
-            <span>Page {{ gallery.image_page.number }} sur {{ gallery.image_page.paginator.num_pages }}</span>
-            {% if gallery.image_page.has_next %}<a href="?{{ gallery.image_param }}={{ gallery.image_page.next_page_number }}#{{ gallery.slug }}-images">Suivante</a><a href="?{{ gallery.image_param }}={{ gallery.image_page.paginator.num_pages }}#{{ gallery.slug }}-images">Dernière</a>{% endif %}
-        </nav>
-        {% endif %}
+        {% include 'partials/pagination.html' with page=gallery.image_page param=gallery.image_param target=gallery.slug|add:'-images' label='Pagination des photos' %}
     </div>
 
     <div id="{{ gallery.slug }}-videos">
@@ -54,13 +48,7 @@
                 <p class="empty-state">Aucune vidéo de cette activité n’est disponible pour le moment.</p>
             {% endfor %}
         </div>
-        {% if gallery.video_page.paginator.num_pages > 1 %}
-        <nav class="pagination" aria-label="Pages de vidéos – {{ gallery.title }}">
-            {% if gallery.video_page.has_previous %}<a href="?{{ gallery.video_param }}=1#{{ gallery.slug }}-videos">Première</a><a href="?{{ gallery.video_param }}={{ gallery.video_page.previous_page_number }}#{{ gallery.slug }}-videos">Précédente</a>{% endif %}
-            <span>Page {{ gallery.video_page.number }} sur {{ gallery.video_page.paginator.num_pages }}</span>
-            {% if gallery.video_page.has_next %}<a href="?{{ gallery.video_param }}={{ gallery.video_page.next_page_number }}#{{ gallery.slug }}-videos">Suivante</a><a href="?{{ gallery.video_param }}={{ gallery.video_page.paginator.num_pages }}#{{ gallery.slug }}-videos">Dernière</a>{% endif %}
-        </nav>
-        {% endif %}
+        {% include 'partials/pagination.html' with page=gallery.video_page param=gallery.video_param target=gallery.slug|add:'-videos' label='Pagination des vidéos' %}
     </div>
 </section>
 {% endfor %}
